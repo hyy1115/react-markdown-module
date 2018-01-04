@@ -21,13 +21,6 @@ const ReactMarkdown = () => {
             this.options = {...options, ...props.options}
             this.converter = new showdown.Converter(this.options)
         }
-        componentDidMount() {
-            console.log(this.converter)
-            const { name } = this.props
-            this.converter.listen(name, () => {
-                console.log(name)
-            })
-        }
         render() {
             const { markHtml, className } = this.props
             const cls = !!className ? className : 'markdown-body'
